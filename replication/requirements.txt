@@ -1,7 +1,0 @@
-# Tested against the versions on the author's machine (Windows 10, Python 3.13).
-# Any reasonably recent release of these five packages will work.
-numpy>=1.24
-pandas>=2.0
-scipy>=1.10
-scikit-learn>=1.2
-statsmodels>=0.14
