@@ -147,13 +147,3 @@ The package prints these rather than hiding them:
 * Seeds are fixed in `config.py` (`SEED = 7`), so the DML and randomisation
   results are bit-reproducible on a given scikit-learn version. Cross-fitting
   folds are clustered by country via `GroupKFold`, which is deterministic.
-
-## 8. Additional files
-
-* `TITLE_AND_ABSTRACT.md` — title, abstract, keywords, JEL codes.
-* `NOTES_FOR_MANUSCRIPT.md` — a draft subsection on the attenuation result
-  (Table 10) and a draft appendix documenting the six hypotheses that were
-  tested and discarded, with the numbers that killed each one.
-* `exploratory/` — the 47 scratch scripts from the search phase, archived for
-  audit. **Not** part of the replication package; no reported table depends on
-  them. Delete the folder freely.
