@@ -1,0 +1,104 @@
+================================================================================================================
+TABLE 8. BALANCE / EXOGENEITY OF THE CLIMATE SHOCK
+Each row regresses |S|_it on one standardised lagged predictor, with
+country x calendar-month and global month FE. If the shock is weather,
+no economic variable should forecast it and the within-R2 should be ~0.
+================================================================================================================
+  Food inflation (t-1)                     +0.006 (0.006)      N= 31,659  within-R2=0.00004
+  Food inflation (t-2)                     -0.009 (0.005)*     N= 31,579  within-R2=0.00010
+  Headline inflation (t-1)                 +0.003 (0.007)      N= 32,073  within-R2=0.00001
+  Trend headline inflation (12m)           -0.005 (0.007)      N= 31,443  within-R2=0.00002
+  Private credit / GDP                     +0.005 (0.019)      N= 28,869  within-R2=0.00001
+  log GDP per capita                       +0.000 (0.043)      N= 31,965  within-R2=0.00000
+  Agriculture VA / GDP                     +0.009 (0.030)      N= 31,361  within-R2=0.00001
+  GDP growth (t-1)                         +0.009 (0.004)**    N= 31,877  within-R2=0.00012
+  Reserves (months of imports)             -0.003 (0.010)      N= 28,676  within-R2=0.00000
+  Food / merch. imports (%)                +0.015 (0.016)      N= 29,468  within-R2=0.00008
+
+  Joint Wald chi2(10) = 21.00, p = 0.0211
+  JOINT within-R2 = 0.00099  -> economically zero predictive content
+
+================================================================================================================
+TABLE 9. TIME-SERIES AND PANEL DIAGNOSTICS
+================================================================================================================
+
+Panel A. Fisher/Choi panel unit-root tests (H0: every series has a unit root)
+  log food CPI (level)                      series= 204  Fisher chi2=     238.4  z=   -5.94  p=1.0000
+  monthly log change in food CPI            series= 204  Fisher chi2=    5306.7  z=  171.49  p=0.0000
+  climate variability shock |S|             series= 159  Fisher chi2=    4988.7  z=  185.21  p=0.0000
+  signed climate surprise S                 series= 159  Fisher chi2=    3886.3  z=  141.49  p=0.0000
+  -> the level is I(1) and the change is I(0): the cumulative-difference
+     local projection is the correct specification.
+
+Panel B. Pesaran (2004) CD test for cross-sectional dependence (h=0 residuals)
+  N = 90 cross-sections, 3828 usable pairs
+  CD = -7.06, p = 0.0000, mean pairwise |rho| = 0.086
+  -> cross-sectional dependence is present; Driscoll-Kraay SEs are required.
+
+Panel C. Residual serial correlation (h=0 residual on its own lag)
+  rho = -0.002 (se 0.027), p = 0.955
+
+================================================================================================================
+TABLE 10. PARAMETER STABILITY
+Rolling ten-year windows; coefficient on |S| at h=6 (FOOD CPI).
+================================================================================================================
+  2003-2012    +0.265 (0.072)***   N=  7,116  Nc=95
+  2005-2014    +0.242 (0.074)***   N=  8,344  Nc=95
+  2007-2016    +0.269 (0.069)***   N=  8,667  Nc=96
+  2009-2018    +0.227 (0.050)***   N=  8,742  Nc=96
+  2011-2020    +0.151 (0.047)***   N=  8,543  Nc=96
+  2013-2022    +0.146 (0.050)***   N=  8,564  Nc=93
+  2015-2024    +0.106 (0.053)**    N=  8,290  Nc=90
+
+  Chow-type break test at 2014m1: |S| x 1{t>=2014} =  -0.155 (0.078)** 
+
+================================================================================================================
+TABLE 11. LEAVE-ONE-COUNTRY-OUT JACKKNIFE (|S| at h=6, FOOD CPI)
+================================================================================================================
+  full-sample beta = +0.179
+  153 jackknife draws | range [+0.160, +0.188] | median +0.179
+  share significant at 5% = 1.00
+
+  most influential countries:
+    drop AFG   beta=+0.160  p=0.000
+    drop FJI   beta=+0.164  p=0.001
+    drop RWA   beta=+0.165  p=0.001
+    drop NPL   beta=+0.168  p=0.000
+    drop ZMB   beta=+0.169  p=0.001
+
+================================================================================================================
+TABLE 12. RANDOMISATION INFERENCE
+Each country's ENTIRE shock block (|S| and its 12 lags, plus |R| and its
+lags) is reassigned to another country, preserving the calendar. The
+estimate is recomputed; the p-value is the share of placebo draws with
+|beta| at least as large as the actual one.
+================================================================================================================
+  estimation sample : 22,954 obs, 141 countries
+  actual beta(|S|)  : +0.1557
+  placebo draws     : 947 | mean -0.0001 | sd 0.0420 | 2.5% -0.0813 | 97.5% +0.0831
+  two-sided RI p    : 0.0000
+
+================================================================================================================
+TABLE 13. IS GROWING-SEASON CLIMATE VOLATILITY TRENDING?
+S is purged of each country's seasonal norm AND its own warming trend, so
+any trend in |S| is a pure SECOND-MOMENT effect. This table reports the
+trend and the inflation contribution it implies - deliberately, because
+the contribution is SMALL and the paper states so rather than overclaiming.
+================================================================================================================
+  All countries       d|S| per decade =  +0.040 (0.009)***   N= 32,226  Nc=153
+  Low-income half     d|S| per decade =  +0.048 (0.014)***   N= 15,982  Nc=106
+  High-income half    d|S| per decade =  +0.037 (0.012)***   N= 15,983  Nc=89
+
+  Frequency of extreme growing seasons:
+    P(|S| > 1.5) : 2003-09: 17.89%   2010-16: 18.80%   2017-25: 19.87%
+    P(|S| > 2.0) : 2003-09:  9.37%   2010-16: 10.87%   2017-25: 11.49%
+    P(|S| > 2.5) : 2003-09:  4.89%   2010-16:  5.73%   2017-25:  6.14%
+
+  Implied rise in E|S| over 2.29 decades: +0.091 sd (se 0.020)
+    h= 6: beta=+0.179 -> cumulative food-CPI contribution = +0.016 pp (se 0.006)
+    h= 9: beta=+0.159 -> cumulative food-CPI contribution = +0.015 pp (se 0.006)
+    h=12: beta=+0.136 -> cumulative food-CPI contribution = +0.012 pp (se 0.006)
+
+  READ THIS AS A SCOPE STATEMENT: volatility is rising and the price
+  response is real, but the trend contribution to inflation is small.
+  The paper is about the response to shocks, not the cost of warming.
